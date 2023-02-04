@@ -25,6 +25,7 @@ def main():
     step=7
 
     while running:
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -44,24 +45,23 @@ def main():
         if key_input[pygame.K_DOWN]:
             sheep_y += step
            
-        pygame.display.flip() 
         pygame.display.update()    
 
-        screen.fill((0,0,0))
+        # screen.fill((0,0,0))
 
     
 def load_assets():
 
     # Set my little sheep logo
-    logo = pygame.image.load("sheep-closeup-eating-grass.jpg")
+    logo = pygame.image.load("assets/sheep-closeup-eating-grass.jpg")
 
     #import sheep 
-    sheep = pygame.image.load("Cotswold_Sheep.png")
+    sheep = pygame.image.load("assets/Cotswold_Sheep.png")
     sheep = pygame.transform.scale(sheep, (225,300))
 
-    background = pygame.image.load("gameBackground.png")
+    background = pygame.image.load("assets/gameBackground.png")
 
-    bucket = pygame.image.load("bucket-of-water.png")
+    bucket = pygame.image.load("assets/bucket-of-water.png")
     bucket = pygame.transform.scale(bucket, (210,210))
 
     return logo, sheep, background, bucket
