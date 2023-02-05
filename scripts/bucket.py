@@ -18,7 +18,8 @@ class BucketChar:
         self.image = pygame.image.load("assets/empty-bucket.png")
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
         if self.times_slurped == 0:
-            pygame.mixer.Sound.play(pygame.mixer.Sound("assets/slurp-sound.mp3"))
+            pygame.mixer.music.load("assets/slurp-sound.mp3")
+            pygame.mixer.music.play()
             self.times_slurped += 1
 
     @property
