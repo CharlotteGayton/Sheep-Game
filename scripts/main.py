@@ -22,24 +22,32 @@ def main():
 
     # Intro Screen
     running = True 
-    while running:
+    count = 30
+    while running or (count != 0):
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
                 sys.exit(0)
+            if event.type == pygame.MOUSEBUTTONDOWN and startButton.rect.collidepoint(pygame.mouse.get_pos()):
+                startButton.ifClicked(screen)
+                running = False      
         
         screen.blit(background, (0, 0))
         startButton.draw(screen)
 
-        if pygame.mouse.get_cursor()[0] and startButton.rect.collidepoint(pygame.mouse.get_pos()):
+        if startButton.rect.collidepoint(pygame.mouse.get_pos()):
             startButton.hover()
-
-        if pygame.mouse.get_pressed()[0] and startButton.rect.collidepoint(pygame.mouse.get_pos()):
-            startButton.ifClicked()
-            running = False
+        else:
+            startButton.currentImage = startButton.image
 
         pygame.display.update() 
+        if not running:
+            count -= 1
+            if count == 10: 
+                startButton.x_position -= 20
+                startButton.y_position -= 10
+                startButton.scale = (startButton.width, startButton.height)
 
     running = True
     while running:

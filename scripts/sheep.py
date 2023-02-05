@@ -3,10 +3,10 @@ import pygame
 class SheepChar:
 
     def __init__(self):
-        self.height = 168
-        self.width = 210
+        self.height = 210
+        self.width = 168
         self.image = pygame.image.load("assets/Cotswold_Sheep.png")
-        self.image = pygame.transform.scale(self.image, (self.height, self.width))
+        self.image = pygame.transform.scale(self.image, (self.width, self.height))
         self.x_position = 10
         self.y_position = 10
         self.step = 7       
@@ -27,4 +27,4 @@ class SheepChar:
 
     @property
     def rect(self):
-        return pygame.Rect(self.x_position, self.y_position, self.height, self.width)
+        return pygame.Rect(self.x_position, self.y_position, self.width, self.height)
