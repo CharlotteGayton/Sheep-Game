@@ -20,6 +20,8 @@ class Button:
         self.y_position += 10
         self.scale = (self.width - 40, self.height - 20)
         self.draw(screen)
+        pygame.mixer.music.load("assets/button-click.wav")
+        pygame.mixer.music.play()
 
 
     def hover(self):
