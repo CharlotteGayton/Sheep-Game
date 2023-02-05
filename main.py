@@ -1,7 +1,7 @@
 import pygame
-from sheep import SheepChar
-from bucket import BucketChar
-from button import Button
+from scripts.sheep import SheepChar
+from scripts.bucket import BucketChar
+from scripts.button import Button
 import sys
 
 def main():
