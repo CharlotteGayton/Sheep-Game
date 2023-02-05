@@ -14,6 +14,11 @@ class Button:
         self.currentImage = self.image
         self.scale = (self.width, self.height)
 
+        self.titleHeader = pygame.image.load("assets/titleSheepGame.png")
+        self.titleHeader = pygame.transform.scale(self.titleHeader, (870, 120))
+        self.titleHeaderPosX = 205
+        self.titleHeaderPosY = 100
+
 
     def ifClicked(self, screen):
         self.x_position += 20
@@ -31,6 +36,10 @@ class Button:
         imageTransformed = pygame.transform.scale(self.currentImage, self.scale)
         screen.blit(imageTransformed, (self.x_position, self.y_position))
         
+    def title(self, screen):
+        screen.blit(self.titleHeader, (self.titleHeaderPosX, self.titleHeaderPosY))
+
+
     @property
     def rect(self):
         return pygame.Rect(self.x_position, self.y_position, self.width, self.height)

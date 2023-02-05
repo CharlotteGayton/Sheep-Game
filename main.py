@@ -35,6 +35,7 @@ def main():
         
         screen.blit(background, (0, 0))
         startButton.draw(screen)
+        startButton.title(screen)
 
         if startButton.rect.collidepoint(pygame.mouse.get_pos()):
             startButton.hover()
