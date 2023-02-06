@@ -8,8 +8,8 @@ class SheepChar:
         self.widthVertical = 111
         self.image = pygame.image.load("assets/sheepFront.png")
         self.image = pygame.transform.scale(self.image, (self.widthVertical, self.height))
-        self.x_position = 10
-        self.y_position = 10
+        self.x_position = 640
+        self.y_position = 500
         self.step = 7       
     
     def move(self, key_input):
