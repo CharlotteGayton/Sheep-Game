@@ -13,12 +13,14 @@ def main():
     startButton = Button()
     
     logo, background = load_assets()
+    background = pygame.transform.scale(background, (1280, 720))
 
     pygame.display.set_icon(logo)
     pygame.display.set_caption("Sheep Game")
 
     # Creating our surface
     screen = pygame.display.set_mode((1280,720))
+    # 1280, 720 -> 256, 144
 
     # Intro Screen
     running = True 
