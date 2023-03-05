@@ -14,9 +14,11 @@ class Button:
         self.currentImage = self.image
         self.scale = (self.width, self.height)
 
-        self.titleHeader = pygame.image.load("assets/titleSheepGame.png")
-        self.titleHeader = pygame.transform.scale(self.titleHeader, (870, 120))
-        self.titleHeaderPosX = 205
+        self.titleHeader = pygame.image.load("assets/newTitle.png")
+        # 870 179
+        self.titleHeader = pygame.transform.scale(self.titleHeader, (957, 196))
+        self.titleHeaderPosX = 161
+        #205
         self.titleHeaderPosY = 100
 
 
